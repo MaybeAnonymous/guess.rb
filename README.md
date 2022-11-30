@@ -13,7 +13,16 @@ A number guessing game written in Ruby, inspired by [this](https://doc.rust-lang
 * Gem used for coloring terminal text.
 * `gem install rainbow`
 
+### [optparse](https://rubygems.org/gems/optparse)
+
+* Gem used to parse command-line arguments.
+* `gem install optparse`
+
 ## How to run
 
-* `ruby guess.rb` or `chmod +x guess.rb && ./guess.rb`
+* `ruby guess.rb [options]`
+
+* Run `ruby guess.rb -h` to display the help screen.
+
+* Run `ruby guess.rb -c` to show the number before the game starts.
 
