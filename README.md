@@ -15,5 +15,5 @@ A number guessing game written in Ruby, inspired by [this](https://doc.rust-lang
 
 ## How to run
 
-* `ruby guess.rb`
+* `ruby guess.rb` or `chmod +x guess.rb && ./guess.rb`
 
