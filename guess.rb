@@ -2,6 +2,21 @@
 # frozen_string_literal: true
 
 require 'rainbow'
+require 'optparse'
+
+options = { cheat: false }
+OptionParser.new do |parser|
+  parser.banner = "Usage: guess.rb [options]\n\n"
+
+  parser.on('-h', '--help', 'Display this screen') do
+    puts parser
+    exit
+  end
+
+  parser.on('-c', '--cheat', 'Show the number before the game starts') do
+    options[:cheat] = true
+  end
+end.parse!
 
 class Config
   attr_reader :min, :max, :tries
@@ -16,8 +31,7 @@ end
 config = Config.new
 number = rand(config.min..config.max)
 
-# Uncomment this line to get the answer
-# puts number
+puts number if options[:cheat]
 
 puts "Welcome! Guess a number between #{config.min} and #{config.max}. You have #{config.tries} tries."
 
