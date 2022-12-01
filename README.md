@@ -26,6 +26,6 @@ Usage: guess.rb [options]
     -c, --cheat                      Show the generated number before the game starts
         --min MIN                    Minimum value for the generated number
         --max MAX                    Maximum value for the generated number
-    -t, --tries TRIES                Minimun value for the generated number
+    -t, --tries TRIES                Number of tries
 ```
 

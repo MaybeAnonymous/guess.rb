@@ -27,7 +27,7 @@ OptionParser.new do |option|
     options[:max] = max.to_i
   end
 
-  option.on('-t TRIES', '--tries TRIES', 'Minimun value for the generated number') do |tries|
+  option.on('-t TRIES', '--tries TRIES', 'Number of tries') do |tries|
     options[:tries] = tries.to_i
   end
 end.parse!
