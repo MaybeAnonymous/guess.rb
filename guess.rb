@@ -32,8 +32,6 @@ OptionParser.new do |option|
   end
 end.parse!
 
-puts options.inspect
-
 class Config
   attr_reader :min, :max, :tries
 
