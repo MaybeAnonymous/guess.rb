@@ -4,31 +4,47 @@
 require 'rainbow'
 require 'optparse'
 
-options = { cheat: false }
-OptionParser.new do |parser|
-  parser.banner = "Usage: guess.rb [options]\n\n"
+options = { cheat: false, min: 0, max: 100, tries: 8 }
 
-  parser.on('-h', '--help', 'Display this screen') do
-    puts parser
+# Command-line option parser
+OptionParser.new do |option|
+  option.banner = 'Usage: guess.rb [options]'
+
+  option.on('-h', '--help', 'Show this help screen') do
+    puts option
     exit
   end
 
-  parser.on('-c', '--cheat', 'Show the number before the game starts') do
+  option.on('-c', '--cheat', 'Show the generated number before the game starts') do
     options[:cheat] = true
   end
+
+  option.on('--min MIN', 'Minimum value for the generated number') do |min|
+    options[:min] = min.to_i
+  end
+
+  option.on('--max MAX', 'Maximum value for the generated number') do |max|
+    options[:max] = max.to_i
+  end
+
+  option.on('-t TRIES', '--tries TRIES', 'Minimun value for the generated number') do |tries|
+    options[:tries] = tries.to_i
+  end
 end.parse!
+
+puts options.inspect
 
 class Config
   attr_reader :min, :max, :tries
 
-  def initialize
-    @min = 0
-    @max = 100
-    @tries = 8
+  def initialize(options)
+    @min = options[:min]
+    @max = options[:max]
+    @tries = options[:tries]
   end
 end
 
-config = Config.new
+config = Config.new(options)
 number = rand(config.min..config.max)
 
 puts number if options[:cheat]

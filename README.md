@@ -18,11 +18,14 @@ A number guessing game written in Ruby, inspired by [this](https://doc.rust-lang
 * Gem used to parse command-line arguments.
 * `gem install optparse`
 
-## How to run
+## Usage
 
-* `ruby guess.rb [options]`
-
-* Run `ruby guess.rb -h` to display the help screen.
-
-* Run `ruby guess.rb -c` to show the number before the game starts.
+```
+Usage: guess.rb [options]
+    -h, --help                       Show this help screen
+    -c, --cheat                      Show the generated number before the game starts
+        --min MIN                    Minimum value for the generated number
+        --max MAX                    Maximum value for the generated number
+    -t, --tries TRIES                Minimun value for the generated number
+```
 
